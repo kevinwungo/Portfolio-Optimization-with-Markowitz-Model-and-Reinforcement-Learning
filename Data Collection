@@ -1,0 +1,7 @@
+import yfinance as yf
+import pandas as pd
+
+# Download data for S&P 500 stocks
+tickers = ['AAPL', 'MSFT', 'GOOGL', 'AMZN', 'TSLA']
+data = yf.download(tickers, start='2020-01-01', end='2023-01-01')['Adj Close']
+data.to_csv('stock_data.csv')  # Save for later
